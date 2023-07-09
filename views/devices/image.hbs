@@ -1,0 +1,68 @@
+<div class="row">
+    <div  class="col s12 center">
+        <div class="section white" id="form">
+            <h3>{{device.serie}}
+                <small>{{{editIcon device.user user device._id false}}}</small>
+            </h3>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div  class="col s12 center">
+        
+        <div class="section white" id="form">
+            <div class="container">
+
+                <div class="row">
+                    
+                    <div class="card-panel hoverable"> 
+                        <h3 class="grey-text text-darken-4">Formulario para subir una imagen a tu dispositivo</h3>
+                        Carge una imagen de su dispositivo en formato JPG o PNG.
+                    </div>
+
+                    <!-- this is form-->
+                    <form action="/devices/{{device._id}}" method="POST" class="col s12" enctype="multipart/form-data">
+
+                        <!--That's where the image will be..-->
+                    
+                        <div class="row">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="file" name="image">
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <!-- This is body details input-->
+                        <div class="row">
+                            <div class="input-field">
+                                <h6>Aquí puedes describir tu imagen</h6>
+                                <textarea id="body" name="body"></textarea>
+                            </div>
+                        </div>      
+
+                        <!-- This is submit form-->
+                        <div class="row">
+                            <input type="submit" value="Guardar" class="btn">
+                            <a href="/devices/{{device._id}}" class="btn orange">Cancelar</a>
+                        </div>
+                        
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function(){
+        $('.parallax').parallax();
+    });
+        
+</script>

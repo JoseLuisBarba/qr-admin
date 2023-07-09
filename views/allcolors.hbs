@@ -1,0 +1,62 @@
+<h3>Bienvenido administrador {{ user.displayName}} </h3>
+    <div class="row">
+        <div class="col s12">
+            <div class="center center-aling">
+                <div class="col s12">
+                    <a href="/colors/add" class="waves-effect waves-light btn-small large"><i class="fa fa-plus right"></i>Agregar Color</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{#if colors}}
+        <p>Mis Colores.</p>
+
+        <!--only desktop-->
+        
+
+        <table  class="display striped highlight" id="devices_table" name="devices_table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>RGB</th>
+                </tr>
+                <tr id="filter_row">
+                    <th>
+                        <input type="text" placeholder="Filtrar name">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar rgb">
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                {{#each colors}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{rgb}}</td>
+                        <td>
+                            <a href="/colors/edit/{{_id}}" class="btn btn-float">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <form action="/colors/delete/{{_id}}" method="POST" id="delete-form">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn red">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Name</th>
+                    <th>RGB</th>
+                </tr>
+            </tfoot>
+        </table>
+         <div id="pagination-container"></div>
+    {{else}}
+        <p>Tu no has registrado ningún color.</p>
+    {{/if}}

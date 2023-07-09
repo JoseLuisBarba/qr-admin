@@ -1,0 +1,42 @@
+<!-- no edit -->
+
+<div class="row">
+    <div class="col s12">
+        <h3> Registra un color</h3>
+    </div>
+</div>
+
+
+
+<!-- Form -->
+
+
+<div class="row">
+    <div class="card device"></div>
+
+        <form action="/colors/add" method="POST" class="col s12">
+           
+            <div class="row">
+                    
+                    <!--  name -->
+                    <div class="input-field row s10">
+                        <i class="fa fa-solid fa-palette prefix"></i>
+                        <input id="name" name="name" type="text" class="validate" value="" required>
+                        <label for="name" >Nombre</label>
+                    </div>
+                    <!--  color -->
+                    <div class="input-field row">
+                        <div class="col s4 center aling">
+                            <i class="fa fa-solid fa-palette prefix"></i>
+                            <input type="color" name="rgb" id="rgb" value="" required>
+                        </div>
+                    </div>
+                    
+            </div>
+            <div class="row">
+                <input type="submit" value="Guardar" class="btn">
+                <a href="/allcolors" class="btn orange">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,151 @@
+<h3>Bienvenido administrador {{ user.displayName}} </h3>
+
+
+    {{#if users}}
+        <p>Usted adminsitra estos usuarios</p>
+
+        <!--only desktop-->
+        <div class="row">
+            <div class="col s12">
+                <div class="center center-aling">
+                    <div class="col s12 m6">
+                        <a href="/downloadexceldevices" class="waves-effect waves-light btn-small large"><i class="fa fa-solid fa-file-excel right"></i>Descargar como excel</a>
+                    </div>
+                    <div class="col s12 m6">
+                        <a href="" class="waves-effect waves-light btn-small large"><i class="fa fa-database right"></i>Consultas avanzadas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table  class="display striped highlight hide-on-med-and-down responsive-table" id="users_table" name="users_table">
+            <thead>
+                <tr>
+                    <th>Matricula</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Género</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    <th>Fecha de Registro</th>
+                    <th>Acción</th>
+                </tr>
+                <tr id="filter_row">
+                    <th>
+                        <input type="text" placeholder="Filtrar matricula">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar nombres">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar apellidos">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar genero">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar telefono">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar email">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar fecha de registro">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar acción">
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                {{#each users}}
+                    <tr>
+                        <td><a href="/users/{{_id}}">{{collegeID}}</a></td>
+                        <td>{{firstName}}</td>
+                        <td>{{lastName}}</td>
+                        <td>{{gender}}</td>
+                        <td>{{phone}}</td>
+                        <td>{{email}}</td>
+                        <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+                        <td>
+
+                            <a href="/users/edit/{{_id}}" class="btn btn-float">
+                                <i class="fas fa-edit"></i>
+                            </a>
+
+                            <form action="/users/delete/{{_id}}" method="POST" id="delete-form">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn red">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+
+
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Matricula</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Género</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    <th>Fecha de Registro</th>
+                    <th>Acción</th>
+                </tr>
+            </tfoot>
+        </table>
+         <div id="pagination-container"></div>
+        <!--only desktop-->
+        <!--only mobile-->
+        <table  class="display striped highlight responsive-table hide-on-large-only" id="users_table_mobile" >
+            <thead>
+                <tr>
+                    <th>Matricula</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Género</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    <th>Fecha de Registro</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                {{#each users}}
+                    <tr>
+                        <td><a href="/users/{{_id}}">{{collegeID}}</a></td>
+                        <td>{{firstName}}</td>
+                        <td>{{lastName}}</td>
+                        <td>{{gender}}</td>
+                        <td>{{phone}}</td>
+                        <td>{{email}}</td>
+                        <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+                        <td>
+
+                            <a href="/users/edit/{{_id}}" class="btn btn-float">
+                                <i class="fas fa-edit"></i>
+                            </a>
+
+                            <form action="/users/delete/{{_id}}" method="POST" id="delete-form">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn red">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+         <div id="pagination-container"></div>
+        <!--only mobile-->
+    {{else}}
+        <p>Aun no se registrado algún usuario.</p>
+    {{/if}}
+
+
+    

@@ -1,0 +1,207 @@
+<div class="row">
+    <div class="col s12">
+        <h3>Sección de modificación de dispositivo</h3>
+    </div>
+    <div class="col s12">
+        <div class="card hoverable small">
+            <div class="card-image">
+                <img src="/images/parallax/peces.jpg" alt="">
+            </div>
+            <div class="card-content">
+                <p>En esta sección, puedes modificar los datos de tu dispositivo al pulsar el botón "Modificar dispositivo" accediendo al formulario. Recuerda que tienes la opción de agregar todos los detalles que desees sobre tu dispositivo en el área de texto, e incluso puedes adjuntar múltiples fotos del mismo.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col s12 m6 center">
+        <a href="#form" class="btn large waves-effect waves-orange grey-text text-darken-4" style="background-color: #ECF8F9;">Modificar dispositivo</a>
+    </div>
+    <div class="col s12 m6 center">
+        <a href="#learn" class="btn large waves-effect waves-green grey-text text-darken-4" style="background-color: #ECF8F9;">Aprender a modificar</a>
+    </div>
+</div>
+
+
+
+
+
+<div class="parallax-container valign-wrapper">
+    <div class="parallax"><img src="/images/parallax/edit2.jpg" alt="Unsplashed background img 2"></div>
+</div>
+
+
+
+<div class="row">
+    <div class="col s12 center">
+        <div class="section white">
+            <div class="container">
+                <div class="row">
+
+
+                    <div class="card-panel hoverable" id="form"> 
+                            <h5 class="grey-text text-darken-4">Formulario de modificación de dispositivo</h5>
+                            Este es el formulario para modificar tu dispositivo. Por favor llene todos los campos.
+                    </div>
+
+
+                    <!--That's where the form be-->
+                    <form action="/devices/{{device._id}}" method="POST" class="col s12" >
+                        <!--Update method-->
+                        <input type="hidden" name="_method" value="PUT" >
+
+
+
+
+       
+                        
+                        <!--That's where the image will be..-->
+                        
+                        <div class="row">
+                            <div class="row">
+                                <!--This is the serie of device-->
+                                <div class="input-field col s12">
+                                    <i class="fa fa-address-card prefix"></i>
+                                    <input placeholder="Ingrese serie del dispositivo" id="serie" name="serie" type="text" class="validate" value="{{device.serie}}" required>
+                                    <label for="serie">Serie</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="row">
+                                <!--This is the date of device-->
+                                <div class="input-field col s12">
+                                    <i class="fa fa-calendar prefix"></i>
+                                    <input id="date" name="date" type="text" class="datepicker" value="{{device.date}}" required>
+                                    <label for="date">Fecha de compra</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+
+
+                        <div class="row">
+                            <div class="row">
+                                <!-- This is the color device input -->
+                                <div class="input-field col s12">
+                                    <select id="color" name="color" class="icons" value="{{device.color}}" required>
+
+                                        <option value="{{device.color}}"> {{device.color}}</option>
+                                        {{#each colors}}
+                                            <option value="{{name}}" > {{name}} </option>
+                                        {{else}}
+                                            <option value="Otro" >No hay nada que mostrar.</option>
+                                        {{/each}}
+                                        
+                                    </select>
+                                    <label for="color">Color de dispositivo</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="row">
+                                <!-- This is the device type input -->
+                                <div class="input-field col s12">
+                                    <select id="type" name="type" class="icons" value="{{device.type}}" required>
+                                        <option value="{{device.type}}" >{{device.type}}</option>
+
+                                        {{#each typedevices}}
+                                            <option value="{{name}}" data-icon="{{image}}" class="left" alt=""> {{name}} </option>
+                                        {{else}}
+                                            <option value="" data-icon="" class="left" alt=""> No hay nada que mostrar </option>
+                                        {{/each}}
+
+                                    </select>
+                                    <label for="type">Tipo de dispositivo</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="row">
+                                <!-- This is the brand type input -->
+                                <div class="input-field col s12">
+                                    <select id="march" name="march" class="icons" value="{{device.march}}" required>
+
+                                        <option value="{{device.march}}" >{{device.march}}</option>
+                                        {{#each brands}}
+                                            <option value="{{name}}" data-icon="{{image}}" class="left" alt=""> {{name}} </option>
+                                        {{else}}
+                                            <option value="" data-icon="" class="left" alt=""> NO hay nada que mostrar</option>
+                                        {{/each}}
+                                        <option value="Otro"> Otro </option>
+                                        
+                                    </select>
+                                    <label for="march">Marca de dispositivo</label>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+
+
+                        <div class="row">
+                            <div class="row">
+                                <!-- This is the user model input -->
+                                <div class="input-field col s12">
+                                    <i class="fa fa-microchip prefix"></i>
+                                    <input id="model" name="model" type="text" class="validate" value="{{device.model}}" required>
+                                    <label for="model">Modelo</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <!-- This is body details input-->
+                        <div class="row">
+                            <div class="input-field">
+                                <h6>Aquí puedes detallar más</h6>
+                                <textarea id="body" name="body" value="{{device.body}}" required>{{device.body}}</textarea>
+                            </div>
+                        </div>      
+
+                        <!-- This is submit form-->
+                        <div class="row">
+                            <input type="submit" value="Guardar" class="btn">
+                            <a href="/dashboard" class="btn orange">Cancelar</a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="parallax-container valign-wrapper">
+    <div class="parallax"><img src="/images/parallax/laptop2.jpg" alt="Unsplashed background img 2"></div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="section white" id="learn">
+        
+        <div class="card-panel hoverable"> 
+            <h5 class="grey-text text-darken-4">Aprender a modificar mi dispositivo</h5>
+            El siguiente video le indicará como modificar tu dispositivo.</div>
+        <div class="video-container">
+            <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="parallax-container valign-wrapper">
+    <div class="parallax"><img src="/images/parallax/tablet2.jpg" alt="Unsplashed background img 2"></div>
+</div>

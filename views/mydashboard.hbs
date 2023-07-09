@@ -1,0 +1,171 @@
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-scale-chromatic.v1.min.js"></script>
+
+<h1>QR Devices Dashboard</h1>
+
+
+
+<div class="row">
+    <div class="col s12">
+        <h3>Dispositivos por mes </h3>
+        <div class="center center-aling">
+            <div class="col s8">
+                <div id="chartdevices" style="width: 500px; height: 300px;"></div>
+            </div>
+            <div class="col s4">
+                <h3>Dispositivos Totales </h3>
+                <h2>{{totalDispositivos}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col s12">
+        <h3>Usuarios por mes </h3>
+        <div class="center center-aling">
+            <div class="col s8">
+                <div id="chartusers" style="width: 500px; height: 300px;"></div>
+            </div>
+            <div class="col s4">
+                <h3>Usuarios totales </h3>
+                <h2>{{totalUsers}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+  // Datos de dispositivos
+  const devicesData = JSON.parse('{{{devices}}}');
+
+  // Set the dimensions of the chart
+  const width = 500;
+  const height = 300;
+  const margin = { top: 20, right: 20, bottom: 30, left: 40 };
+
+  // Create the SVG container for devices chart
+  const svgDevices = d3.select("#chartdevices")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+  // Calculate the scales and axes for devices chart
+  const xDevices = d3.scaleBand()
+    .domain(devicesData.map((d) => d._id))
+    .range([margin.left, width - margin.right])
+    .padding(0.1);
+
+  const yDevices = d3.scaleLinear()
+    .domain([0, d3.max(devicesData, (d) => d.count)])
+    .nice()
+    .range([height - margin.bottom, margin.top]);
+
+  const xAxisDevices = (g) =>
+    g.attr('transform', `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(xDevices));
+
+  const yAxisDevices = (g) =>
+    g.attr('transform', `translate(${margin.left},0)`)
+    .call(d3.axisLeft(yDevices))
+    .call((g) => g.select('.domain').remove());
+
+  // Create the bars for devices chart
+  svgDevices.selectAll('rect')
+    .data(devicesData)
+    .enter()
+    .append('rect')
+    .attr('x', (d) => xDevices(d._id))
+    .attr('y', (d) => yDevices(d.count))
+    .attr('height', (d) => yDevices(0) - yDevices(d.count))
+    .attr('width', xDevices.bandwidth())
+    .attr('fill', (d, i) => d3.interpolateSpectral(i / devicesData.length));
+
+  // Append the axes to the SVG for devices chart
+  svgDevices.append('g').call(xAxisDevices);
+  svgDevices.append('g').call(yAxisDevices);
+
+  // Add labels to the axes for devices chart
+  svgDevices.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('x', width / 2)
+    .attr('y', height - 5)
+    .text('Mes');
+
+  svgDevices.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('transform', 'rotate(-90)')
+    .attr('x', -height / 2)
+    .attr('y', 10)
+    .text('Cantidad de Dispositivos Registrados');
+</script>
+
+<script>
+  // Datos de usuarios
+  const usersData = JSON.parse('{{{users}}}');
+
+  // Create the SVG container for users chart
+  const svgUsers = d3.select("#chartusers")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+  // Calculate the scales and axes for users chart
+  const xUsers = d3.scaleBand()
+    .domain(usersData.map((d) => d._id))
+    .range([margin.left, width - margin.right])
+    .padding(0.1);
+
+  const yUsers = d3.scaleLinear()
+    .domain([0, d3.max(usersData, (d) => d.count)])
+    .nice()
+    .range([height - margin.bottom, margin.top]);
+
+  const xAxisUsers = (g) =>
+    g.attr('transform', `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(xUsers));
+
+  const yAxisUsers = (g) =>
+    g.attr('transform', `translate(${margin.left},0)`)
+    .call(d3.axisLeft(yUsers))
+    .call((g) => g.select('.domain').remove());
+
+  // Create the bars for users chart
+  svgUsers.selectAll('rect')
+    .data(usersData)
+    .enter()
+    .append('rect')
+    .attr('x', (d) => xUsers(d._id))
+    .attr('y', (d) => yUsers(d.count))
+    .attr('height', (d) => yUsers(0) - yUsers(d.count))
+    .attr('width', xUsers.bandwidth())
+    .attr('fill', (d, i) => d3.interpolateSpectral(i / usersData.length));
+
+  // Append the axes to the SVG for users chart
+  svgUsers.append('g').call(xAxisUsers);
+  svgUsers.append('g').call(yAxisUsers);
+
+  // Add labels to the axes for users chart
+  svgUsers.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('x', width / 2)
+    .attr('y', height - 5)
+    .text('Mes');
+
+  svgUsers.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('transform', 'rotate(-90)')
+    .attr('x', -height / 2)
+    .attr('y', 10)
+    .text('Cantidad de Usuarios Registrados');
+</script>
+
+
+
+
+

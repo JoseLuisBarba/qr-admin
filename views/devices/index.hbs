@@ -1,0 +1,39 @@
+<div class="row"> 
+    <div class="card-panel hoverable"> 
+        <h3 class="grey-text text-darken-4">Mis dispositivos</h3>
+        Aquí puedes acceder a todos tus dispositivos.
+    </div>
+</div>  
+
+<div class="row">
+    {{#each devices}}
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    {{{editIcon user ../user _id}}}
+                </div>
+                <div class="card-content center-align">
+                    <h5>{{type}}</h5>
+                    <h6>{{serie}}</h6>
+                    <h7>{{march}}</h7>
+                    <!--
+                    <p>{{stripTags (truncate body 100)}}</p>
+                    -->
+                    
+                    <img src="/uploads/devices/{{image}}"  alt="" class="circle responsive-img">
+
+                    <br>
+                    <div class="chip cyan lighten-5 grey-text text-darken-4">
+                        <img src="{{user.image}}" alt="">
+                        <a href="/devices/user/{{user._id}}">{{user.displayName}}</a>
+                    </div>
+                </div>
+                <div class="card-action center-align">
+                    <a href="/devices/{{_id}}" class="btn light-blue darken-4 ">Más detalles</a>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <p>No hay dispositivos para mostrar.</p>
+    {{/each}}
+</div>

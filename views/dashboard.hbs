@@ -1,0 +1,161 @@
+<h3>Bienvenido administrador {{ user.displayName}} </h3>
+
+
+    {{#if devices}}
+        <p>Mis dispositivos.</p>
+
+        <!--only desktop-->
+        <div class="row">
+            <div class="col s12">
+                <div class="center center-aling">
+                    <div class="col s12 m6">
+                        <a href="/downloadexceldevices" class="waves-effect waves-light btn-small large"><i class="fa fa-solid fa-file-excel right"></i>Descargar como excel</a>
+                    </div>
+                    <div class="col s12 m6">
+                        <a href="" class="waves-effect waves-light btn-small large"><i class="fa fa-database right"></i>Consultas avanzadas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table  class="display striped highlight hide-on-med-and-down responsive-table" id="devices_table" name="devices_table">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Serie </th>
+                    <th>Fecha de compra </th>
+                    <th>Fecha de registro</th>
+                    <th>Tipo</th>
+                    <th>Marca</th>
+                    <th>Color</th>
+                    <th>Modelo</th>
+                    <th>Acción</th>
+                </tr>
+                <tr id="filter_row">
+                    <th>
+                        <input type="text" placeholder="Filtrar usuario">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar serie">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar Fecha de compra">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar fecha de registro">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar tipo">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar marca">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar color">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar modelo">
+                    </th>
+                    <th>
+                        <input type="text" placeholder="Filtrar acción">
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                {{#each devices}}
+                    <tr>
+                        <td><a href="/users/{{userDetails._id}}">{{userDetails.displayName}}</a></td>
+                        <td><a href="/devices/{{_id}}">{{serie}}</a> </td>
+                        <td>{{date}}</td>
+                        <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+                        <td>{{type}}</td>
+                        <td>{{march}}</td>
+                        <td>{{color}}</td>
+                        <td>{{model}}</td>
+                        <td>
+
+                            <a href="/devices/edit/{{_id}}" class="btn btn-float">
+                                <i class="fas fa-edit"></i>
+                            </a>
+
+                            <form action="/devices/{{_id}}" method="POST" id="delete-form">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn red">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+
+
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Serie</th>
+                    <th>Fecha de compra</th>
+                    <th>Fecha de registro</th>
+                    <th>Tipo</th>
+                    <th>Marca</th>
+                    <th>Color</th>
+                    <th>Modelo</th>
+                    <th>Acción</th>
+                </tr>
+            </tfoot>
+        </table>
+         <div id="pagination-container"></div>
+        <!--only desktop-->
+        <!--only mobile-->
+        <table  class="display striped highlight responsive-table hide-on-large-only" id="devices_table_mobile" >
+            <thead>
+                <tr>
+                    <th>user </th>
+                    <th>Serie </th>
+                    <th>Fecha de compra </th>
+                    <th>Fecha de registro</th>
+                    <th>Tipo</th>
+                    <th>Marca</th>
+                    <th>Color</th>
+                    <th>Modelo</th>
+                    <th>Acción</th>
+                </tr>
+
+            </thead>
+            <tbody id="tbody">
+                {{#each devices}}
+                    <tr>
+                        <td><a href="/users/{{userDetails._id}}">{{userDetails.displayName}}</a></td>
+                        <td> <a href="/devices/{{_id}}">{{serie}}</a> </td>
+                        <td>{{date}}</td>
+                        <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+                        <td>{{type}}</td>
+                        <td>{{march}}</td>
+                        <td>{{color}}</td>
+                        <td>{{model}}</td>
+                        <td>
+
+                            <a href="/devices/edit/{{_id}}" class="btn btn-float">
+                                <i class="fas fa-edit"></i>
+                            </a>
+
+                            <form action="/devices/{{_id}}" method="POST" id="delete-form">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn red">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+
+
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+         <div id="pagination-container"></div>
+        <!--only mobile-->
+    {{else}}
+        <p>Tu no has registrado ningún dispositivo.</p>
+    {{/if}}
+
+

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>QR Devices Admin</title>
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled font-awesome cdnjs CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled font-awesome cdnjs CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/main/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/main/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/button/dark-light/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/css/button/social/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!--
+    <link href="/css/video/init/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    -->
+</head>
+<body>
+
+
+
+
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">QR Device Admin</a>
+            
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#" id="scanQR">Escanear QR</a></li>
+                <li><a href="#login">Iniciar Sesión</a></li>
+                <li><a href="#contact">Contáctanos</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#" id="scanQRMobile">Escanear QR</a></li>
+                <li><a href="#login">Iniciar Sesión</a></li>
+                <li><a href="#contact">Contáctanos</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger "><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+<!--
+    <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite">
+        <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+            <mask class="moon" id="moon-mask">
+            <rect x="0" y="0" width="100%" height="100%" fill="white" />
+            <circle cx="24" cy="10" r="6" fill="black" />
+            </mask>
+            <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+            <g class="sun-beams" stroke="currentColor">
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </g>
+        </svg>
+    </button>
+-->
+
+
+
+
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+        <div class="container">
+            <br><br>
+            <h1 class="header center white-text">QR Devices Admin</h1>
+            <div class="row center">
+            <h5 class="header col s12 light">Con Universidad Nacional de Trujillo</h5>
+            </div>
+            <div class="row center">
+            <a href="#login" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Iniciar Sesión</a>
+            </div>
+            <br><br>
+
+        </div>
+        </div>
+        <div class="parallax"><img src="images/parallax/laptop2.png" alt="Unsplashed background img 1"></div>
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="center col s12">
+                <h4 class="grey-text text-darken-4">Registra, genera y escanea tu futuro tecnológico con QR Device</h2>
+            </div>
+            <div class="col s12 m4">
+            <div class="icon-block">
+                <h2 class="center"><i class="material-icons">flash_on</i></h2>
+                <h5 class="center">Visión</h5>
+
+                <p>Nuestra visión para el año 2027 es ser líder en seguridad de dispositivos electrónicos mediante códigos QR en las Universidades del Perú, protegiendo y fortaleciendo la seguridad universitaria.</p>
+            </div>
+            </div>
+
+            <div class="col s12 m4">
+            <div class="icon-block">
+                <h2 class="center"><i class="material-icons">group</i></h2>
+                <h5 class="center">Misión</h5>
+                <p>Nuestra misión es brindar un servicio de seguridad confiable y eficiente para la protección de dispositivos electrónicos de nuestros usuarios mediante el uso de códigos QR.</p>
+            </div>
+            </div>
+
+            <div class="col s12 m4">
+            <div class="icon-block">
+                <h2 class="center"><i class="material-icons">group</i></h2>
+                <h5 class="center">¿Qué hacemos?</h5>
+                <div class="video-container">
+                    <iframe width="400" height="200" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+            <h5 class="header col s12 light"></h5>
+            </div>
+        </div>
+        </div>
+        <div class="parallax"><img src="images/parallax/edit_1.jpg" alt="Unsplashed background img 2"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="section">
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12">
+                    <h4 class="center text-darken-4">Novedades tecnológicas</h4>
+                </div>
+                <!--Cards text-->
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="/images/front/qr.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4 center">Tecnología de integración QR</span>
+                            <p><a href="#">Conocer más de esto ...</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title light grey-text text-darken-4">Tecnología de integración QR<i class="fa fa-circle-xmark posfix right"></i></span>
+                            <p>Disponemos de un sistema de cifrado y descifrado de códigos QR para dispositivos registrados en nuestro sistema. Esta implementación proporciona una mayor seguridad para datos sensibles y permite procesos de control más rápidos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="/images/front/cloud.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4 center">Sistema de información en la nube</span>
+                            <p><a href="#">Conocer más de esto ...</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title light grey-text text-darken-4">Información en la nube<i class="fa fa-circle-xmark posfix right"></i></span>
+                            <p>Nuestra información se encuentra distribuida en un clúster de computadoras en la nube, lo cual nos brinda un mayor nivel de seguimiento en caso de pérdida o robo de datos. Además, contamos con una base de datos escalable y flexible que se adapta a cualquier requerimiento específico de su negocio.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="/images/front/face.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4 center">Reconocimiento facial</span>
+                            <p><a href="#">Conocer más de esto ...</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title light grey-text text-darken-4">Reconocimiento facial<i class="fa fa-circle-xmark posfix right"></i></span>
+                            <p>Ofrecemos un servicio de reconocimiento facial altamente preciso utilizando la tecnología más avanzada de inteligencia artificial. Nuestra solución garantiza el reconocimiento de los miembros sin ningún tipo de subjetividad, proporcionando resultados objetivos y confiables.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+            <h5 class="header col s12 light"></h5>
+            </div>
+        </div>
+        </div>
+        <div class="parallax"><img src="images/parallax/edit_1.jpg" alt="Unsplashed background img 2"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container" id="login">
+        <div class="section">
+
+        <div class="row">
+            <div class="col s12 center">
+                <div class="container login-container"> 
+                    <div class="card">
+                        <div class="card-content">
+                            {{{body}}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+            <h5 class="header col s12 light"></h5>
+            </div>
+        </div>
+        </div>
+        <div class="parallax"><img src="images/parallax/edit_1.jpg" alt="Unsplashed background img 3"></div>
+    </div>
+
+
+    <div class="container" id="contact">
+        <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row" id="">
+            <div class="col s12">
+                <h4 class="center grey-text text-darken-4">Contáctanos</h4>
+            </div>
+            <div class="col s12 center">
+                <h5 class="center">Escaneando este QR</h5>
+                <div class="image-container">
+                    <img class="materialboxed centered-image" width="220" src="images/parallax/QR Device.png">
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12">
+                    <h4 class="center text-darken-4">O también en</h4>
+                </div>
+                <div class="center col s12">
+                    {{> _social_btn}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+            <h5 class="header col s12 light"></h5>
+            </div>
+        </div>
+        </div>
+        <div class="parallax"><img src="images/parallax/edit_1.jpg" alt="Unsplashed background img 2"></div>
+    </div>
+
+
+
+
+    <footer class="page-footer blue darken-4">
+        <div class="container blue darken-4">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Company Bio</h5>
+                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Settings</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+
+                <div class="col l3 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright  indigo darken-4">
+            <div class="container">
+            © 2023 Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">TurinWare</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--  Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.21.0/ckeditor.js" integrity="sha512-ff67djVavIxfsnP13CZtuHqf7VyX62ZAObYle+JlObWZvS4/VQkNVaFBOO6eyx2cum8WtiZ0pqyxLCQKC7bjcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.32.0/js/jquery.fileupload.min.js" integrity="sha512-P7EUiLYW7QUrhYrLgaJ++ok2j2I7Pu0UgGnrpLowujPZicu7mIR0V/Trq+7kl/0nEkp6yNGh8eFJY1JUv3dkPA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js" integrity="sha512-/6TZODGjYL7M8qb7P6SflJB/nTGE79ed1RfJk3dfm/Ib6JwCT4+tOfrrseEHhxkIhwG8jCl+io6eaiWLS/UX1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/main/materialize.js"></script>
+    <script src="js/main/init.js"></script>
+    <!--this script actives the camera to scan a QR code-->
+    <script src="js/main/scanQRMobile.js"></script> 
+    <script src="js/button/dark-light/init.js"></script> 
+    <!--<script src="js/button/social/init.js"></script>-->
+    <!--
+    <script src="js/video/init.js"></script>
+    
+  </body>
+</html>

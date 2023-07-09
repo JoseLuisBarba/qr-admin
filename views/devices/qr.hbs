@@ -1,0 +1,57 @@
+<div class="row">
+    <div  class="col s12 center">
+        <div class="section white" id="form">
+            <h3>{{device.type}} {{device.march}}
+                <small>{{{editIcon device.user user device._id false}}}</small>
+            </h3>
+            <h4>{{device.serie}}</h4>
+        </div>
+    </div>
+</div>
+
+{{#if device.qrcode}}
+    <div class="row">
+        <div  class="col s12 center">
+            <img src="{{device.qrcode}}" alt="">
+            <h4>Este es su QR. Ahora puedes descargarlo o generar otro.</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div  class="col s12">
+            <div class="col s12">
+                <div class="center">
+                    <a href="{{device.qrcode}}" class="waves-effect waves-light btn-small large" download="qr_code_{{device.serie}}.png"><i class="fa fa-cloud-arrow-down right"></i>Descargar QR</a>
+                    <form action="/devices/image/myqr/successful/{{device._id}}" method="POST" class="btn waves-effect waves-light btn-small large white-text">
+                        <!--Update method-->
+                        <input type="hidden" name="_method" value="PUT" >
+                        <input type="submit" value="Generar nuevo QR"  class="white-text"> <i class="fa fa-qrcode right"></i>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{{else}}
+    <div class="row">
+        <div  class="col s12 center">
+            <img  width="650" src="/uploads/devices/{{device.image}}" alt="">
+            <h4>Su dispositivo aun no tiene un QR. Presione sobre "Generar QR" para obtenerlo.</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div  class="col s12">
+            <div class="col s12">
+                <div class="center">
+                    <a href="/uploads/devices/{{device.image}}" class="waves-effect waves-light btn-small large" download><i class="fa fa-cloud-arrow-down right"></i>Descargar QR</a>
+                    <form action="/devices/image/myqr/successful/{{device._id}}" method="POST" class="btn waves-effect waves-light btn-small large white-text">
+                        <!--Update method-->
+                        <input type="hidden" name="_method" value="PUT" >
+                        <input type="submit" value="Generar nuevo QR"  class="white-text"> <i class="fa fa-qrcode right"></i>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}
+
+
+

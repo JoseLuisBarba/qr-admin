@@ -1,0 +1,49 @@
+<!--His the sidenav of user system-->
+<nav class="red accent-3"> 
+
+    <a href="/dashboard" class="brand-logo center white-text text-darken-4">QR Devices Admin</a>
+    <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
+    
+    <div class="nav-wrapper container">
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="/images/parallax/pez.jpg" style="max-width:300px">
+                    </div>
+                    <img  class="circle large" src="{{user.image}}" alt="">
+                    <br>
+                </div>
+            </li>
+            <li><a href="/users" class="black-text name">Admin: {{ user.displayName }}</a></li>
+            <li><a href="/devices"><i class="fa fa-pen-to-square fa-2xl" style="color: #4e6fa6;"></i>Ver dispositivos</a></li>
+            <li><a href="/dashboard"><i class="fa fa-house-laptop fa-2xl" style="color: #4e6fa6;"></i>Administrar dispositivos</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">Tablas</a></li>
+            <li><a class="waves-effect" href="#!"><i class="fa fa-table-columns" style="color: #4e6fa6;"></i>Administradores</a></li>
+            <li><a href="/dashboard" class="waves-effect" href="#!"><i class="fa fa-table-columns" style="color: #4e6fa6;"></i>Dispositivos</a></li>
+            <li><a href="/allcolors" class="waves-effect"><i class="fa fa-table-columns" style="color: #4e6fa6;"></i>Colores</a></li>
+            <li><a href="/allbrands" class="waves-effect"><i class="fa fa-table-columns" style="color: #4e6fa6;"></i>Marcas</a></li>
+            <li><a href="/alltypedevices" class="waves-effect" ><i class="fa fa-table-columns" style="color: #4e6fa6;"></i>Tipo de dispositivos</a></li>
+            <li><a href="/allusers" class="waves-effect" href="#!"><i class="fa fa-table-columns" style="color: #4e6fa6;"></i>Usuarios</a></li>
+            
+        
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">Verificación</a></li>
+            <li><a class="waves-effect" href="#!"><i class="fa fa-eye-low-vision fa-2xl" style="color: #4e6fa6;"></i>Reconocimiento facial</a></li>
+            <li><a class="subheader">Estadísticas</a></li>
+            <li><a class="waves-effect" href="/mydashboard"><i class="fa fa-infinity" style="color: #4e6fa6;"></i>Dashboard</a></li>
+            <li><a class="waves-effect" href="#!"><i class="fa fa-chart-line" style="color: #4e6fa6;"></i>Gráficos</a></li>
+            <li><a class="subheader">Configuraciones</a></li>
+            <li><a class="waves-effect" href="/users"><i class="fa fa-address-card fa-2xl" style="color: #4e6fa6;"></i>Ver mi perfil</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">Cuenta</a></li>
+            <li><a class="waves-effect" href="/auth/logout"><i class="fa fa-arrow-right-from-bracket fa-2xl" style="color: #4e6fa6;"></i>Cerrar sesión</a></li>
+            
+        </ul>
+
+    </div>
+
+</nav>
+
+
